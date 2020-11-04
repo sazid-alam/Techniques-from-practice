@@ -2,7 +2,7 @@
 
 ## Dynamic Programming
 
-* Calculate the maximum cost to visit (1, 1) to (n, m) in a matrix, 
+#### Calculate the maximum cost to visit (1, 1) to (n, m) in a matrix, 
   ```
   FOR(i, 1, n + 1){
       FOR(j, 1, m + 1){
@@ -10,6 +10,7 @@
       }
   }
   ```
-* Two way Dp
-*Problem:* Bear and Blocks 
-*Solution Link:* https://codeforces.com/contest/573/submission/97623198
+#### Two way Dp
+**Problem:** Bear and Blocks 
+
+**Solution Link:** https://codeforces.com/contest/573/submission/97623198
