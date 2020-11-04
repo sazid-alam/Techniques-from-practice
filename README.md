@@ -10,3 +10,6 @@
       }
   }
   ```
+* Two way Dp
+*Problem:* Bear and Blocks 
+*Solution Link:* https://codeforces.com/contest/573/submission/97623198
