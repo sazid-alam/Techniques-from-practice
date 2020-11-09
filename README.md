@@ -1,3 +1,3 @@
 # Techniques-from-practice
 
-I will store some important techniques from my practise. 
+I will store some important techniques from my practice. 
