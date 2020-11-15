@@ -5,4 +5,4 @@
 **Problem:** [CF Count the Arrays R1700](https://codeforces.com/problemset/problem/1312/D)
 
 **Approach:** 
-[](20201115_164827-1.jpg)
+[](https://www.imageupload.net/image/XKqBS)
