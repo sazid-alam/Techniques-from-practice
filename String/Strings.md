@@ -1,6 +1,10 @@
 ## Strings
 
-### Prefix Function
+<details>
+<summary>  
+    Prefix Function
+</summary>
+
 ```cpp
 /*
     everything 0-indexed
@@ -35,3 +39,4 @@ int prefixFunction(const string& s){
 **Problem:** CF Camp Schedule R1600
 
 **Solution Link:** https://codeforces.com/contest/1137/submission/97693928
+</details>
