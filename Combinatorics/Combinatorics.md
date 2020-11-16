@@ -2,8 +2,10 @@
 
 <details>
 <summary>
+    
 ### Varient 1: Count the number of arrays that meet some .... conditions.
 <\summary>
+
 **Problem:** [CF Count the Arrays R1700](https://codeforces.com/problemset/problem/1312/D)
 
 **Approach:** 
