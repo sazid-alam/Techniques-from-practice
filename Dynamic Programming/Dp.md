@@ -61,4 +61,7 @@ bool isSubsetSum(vector<int> Set, int n, int sum){
     return subset[n][sum];
 }
 ```
+
+**Problem:** [CF Unmerge R1800](https://codeforces.com/contest/1381/problem/B)
+**Solution Link:** https://codeforces.com/contest/1381/submission/99295496
 </details>
