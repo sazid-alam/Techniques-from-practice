@@ -4,6 +4,7 @@
 <summary>  
     Dijkstra
 </summary>
+    
 ```cpp
 ll n, m;
 vector<pair<ll, ll>> adj[MX];
@@ -43,6 +44,7 @@ void Dijkstra(int start){
 <summary>  
     Topological Sort 
 </summary>
+    
 ```cpp
 int n, m;
 vi Graph[MX], top_sort; // Assume that this Graph is a DAG
