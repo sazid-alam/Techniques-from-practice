@@ -105,3 +105,60 @@ int main(){
 }
 ```
 </details>
+
+<details>
+<summary>  
+    Disjoint Set Union (DSU)
+</summary>
+    
+**Problem:** [Yosupo OJ Union Find](https://judge.yosupo.jp/problem/unionfind)
+
+**Code:**
+    
+```cpp
+int n, q;
+int Size[MX], Path[MX]; // 1 - indexed.
+
+void Initialize(){
+    FOR(i, 1, n + 1) Size[i] = 1, Path[i] = i; // Initial Size for all i is 1 and Path is i.
+}
+
+int Find(int x){
+    return (x == Path[x] ? x : Path[x] = Find(Path[x])); // Finding the root path.
+}
+
+bool Same(int a, int b){
+    return Find(a) == Find(b); // If both a and b are from same root path.
+}
+
+void Unite(int a, int b){
+    a = Find(a);
+    b = Find(b);
+    if(Size[a] < Size[b]) swap(a, b);
+    Size[a] += Size[b];
+    Path[b] = a;        // New path for b is the path of a.
+}
+
+int main(){
+
+    setIO();
+
+    cin >> n >> q;
+
+    Initialize();
+
+    F0R(i, q){
+
+        int t, a, b;
+        cin >> t >> a >> b;
+
+        if(t == 0){
+            Unite(a + 1, b + 1);
+        }
+        else{
+            cout << Same(a + 1, b + 1) << "\n";
+        }
+    }
+}
+```
+</details>
