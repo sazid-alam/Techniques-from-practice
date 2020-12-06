@@ -65,3 +65,26 @@ int main(){
 }
 ```
 </details>
+
+<details>
+<summary>  
+    Binary Indexed Tree / Fenwick Tree Template
+</summary>
+
+<details>
+<summary>  
+    1. Point Update and Range Query
+</summary>
+
+```cpp
+struct BIT {      // 1D and 1 - indexed.
+    int n; vll a; // Point Update and Range Query.
+    void init(int s){ n = s; a = vll(n + 1, 0LL); }
+    void add(int pos, ll delta){ while(pos <= n){ a[pos] += delta; pos += (pos & -pos); }}
+    ll sum(int pos){ ll s = 0LL; while(pos > 0){ s += a[pos]; pos -= (pos & -pos); } return s; }
+    ll query(int l, int r){ return sum(r) - sum(l - 1);}
+};
+```
+</details>
+
+</details>
