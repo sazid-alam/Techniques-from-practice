@@ -191,7 +191,7 @@ struct DSU { // 0 - indexed.
     
 ```cpp
 int n;
-vi adj[MX], side(n, -1);
+vi adj[MX], side(MX, -1);
 queue<int> Q;
 
 bool is_Bipertite(){ // 1 - indexed Graph.
