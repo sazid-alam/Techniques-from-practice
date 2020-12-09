@@ -184,3 +184,40 @@ struct DSU { // 0 - indexed.
 ```
 </details>
 
+<details>
+<summary>  
+    Bipertite Checking by BFS
+</summary>
+    
+```cpp
+int n;
+vi adj[MX], side(n, -1);
+queue<int> Q;
+
+bool is_Bipertite(){ // 1 - indexed Graph.
+
+    bool ok = true;
+
+    FOR(node, 1, n + 1){
+        if(side[node] == -1){
+            Q.push(node);
+            side[node] = 0;
+            while(!Q.empty()){
+                int v = Q.front(); Q.pop();
+                for(auto u : adj[v]){
+                    if(side[u] == -1){
+                        side[u] = side[v] ^ 1;
+                        Q.push(u);
+                    }
+                    else ok &= side[u] != side[v];
+                }
+            }
+        }
+    }
+
+    return ok;
+}
+```
+</details>
+
+
