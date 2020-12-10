@@ -229,36 +229,58 @@ bool is_Bipertite(){ // 1 - indexed Graph.
 
 **Code:**
 ```cpp
-ll n, m;
-vector<pair<ll, ll>> adj[MX];
-ll Distance[MX], From[MX]; // From array needed when you need the path.
-bool processed[MX];
-priority_queue<pair<ll, ll>> PQ;
- 
-void Dijkstra(int start){
- 
-    FOR(i, 1, n + 1) Distance[i] = INF;
-    Distance[start] = 0;
-    PQ.push({0, start});
- 
-    while(!PQ.empty()){
- 
-        int a = PQ.top().ss; PQ.pop();
- 
-        if(processed[a]) continue;
-        processed[a] = true;
- 
-        for(auto u : adj[a]){
- 
-            ll b = u.ff, w = u.ss;
- 
-            if(Distance[a] + w < Distance[b]){
-                Distance[b] = Distance[a] + w;
-                PQ.push({-Distance[b], b});
-                From[b] = a;
+int n, m, from[MX], sv, ev;
+vi adj[MX], cycle;
+bool cycle_found = false, visited[MX];
+
+bool DFS(int node, int parent){
+
+    visited[node] = true;
+    from[node] = parent;
+
+    for(auto u : adj[node]){
+        if(visited[u] && u != parent){
+            cycle_found = true;
+            sv = u;    // starting vertex.
+            ev = node; // ending vertex.
+            return true;
+        }
+        else if(!visited[u]) if(DFS(u, node)) return true;
+    }
+    return false;
+}
+
+int main(){
+
+    setIO();
+
+    cin >> n >> m;
+
+    while(m--){
+        int a, b;
+        cin >> a >> b;
+        adj[a].pb(b);
+        adj[b].pb(a);
+    }
+
+    FOR(i, 1, n + 1){
+        if(!visited[i]) DFS(i, 0);
+        if(cycle_found){
+
+            cycle.pb(sv);    // Get the cycle by the from array.
+            while(ev != sv){
+                cycle.pb(ev);
+                ev = from[ev];
             }
+            cycle.pb(sv);
+
+            cout << sz(cycle) << "\n";
+            for(auto it : cycle) cout << it << " ";
+            return 0;
         }
     }
+
+    cout << "IMPOSSIBLE";
 }
 ```
 </details>
