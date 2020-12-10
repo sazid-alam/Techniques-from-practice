@@ -222,7 +222,7 @@ bool is_Bipertite(){ // 1 - indexed Graph.
 
 <details>
 <summary>  
-    Finding cycle in a directed graph
+    Finding cycle in an undirected graph
 </summary>
 
 **Problem:** [CSES Round Trip](https://cses.fi/problemset/task/1669/)
