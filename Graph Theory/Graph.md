@@ -220,4 +220,47 @@ bool is_Bipertite(){ // 1 - indexed Graph.
 ```
 </details>
 
+<details>
+<summary>  
+    Finding cycle in a directed graph
+</summary>
+
+**Problem:** [CSES Round Trip](https://cses.fi/problemset/task/1669/)
+
+**Code:**
+```cpp
+ll n, m;
+vector<pair<ll, ll>> adj[MX];
+ll Distance[MX], From[MX]; // From array needed when you need the path.
+bool processed[MX];
+priority_queue<pair<ll, ll>> PQ;
+ 
+void Dijkstra(int start){
+ 
+    FOR(i, 1, n + 1) Distance[i] = INF;
+    Distance[start] = 0;
+    PQ.push({0, start});
+ 
+    while(!PQ.empty()){
+ 
+        int a = PQ.top().ss; PQ.pop();
+ 
+        if(processed[a]) continue;
+        processed[a] = true;
+ 
+        for(auto u : adj[a]){
+ 
+            ll b = u.ff, w = u.ss;
+ 
+            if(Distance[a] + w < Distance[b]){
+                Distance[b] = Distance[a] + w;
+                PQ.push({-Distance[b], b});
+                From[b] = a;
+            }
+        }
+    }
+}
+```
+</details>
+
 
