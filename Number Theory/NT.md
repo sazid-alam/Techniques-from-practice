@@ -3,6 +3,7 @@
 <summary>  
     Finding all divisors of a^k from prime factorization
 </summary>
+    
 ```cpp
 vector<pair<ll, ll>> primes;
 vll d;
