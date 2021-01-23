@@ -4,3 +4,4 @@
 - Make some test cases and find out the similarities between them.
 - Be careful about integer overflow.
 - Break the problem into smaller sub problems.
+- Don't get stuck in a problem for more than 30 minutes in a contest.
