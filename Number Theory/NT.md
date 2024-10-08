@@ -56,3 +56,119 @@ vll All_Div(ll n, ll k){
 }
 ```
 </details>
+
+<details>
+<summary>  
+    Count number of divisors
+</summary>
+    
+```cpp
+long long numberOfDivisors(long long num) {
+    long long total = 1;
+    for (int i = 2; (long long)i * i <= num; i++) {
+        if (num % i == 0) {
+            int e = 0;
+            do {
+                e++;
+                num /= i;
+            } while (num % i == 0);
+            total *= e + 1;
+        }
+    }
+    if (num > 1) {
+        total *= 2;
+    }
+    return total;
+}
+```
+</details>
+
+<details>
+<summary>  
+    Count sum of divisors
+</summary>
+    
+```cpp
+long long SumOfDivisors(long long num) {
+    long long total = 1;
+
+    for (int i = 2; (long long)i * i <= num; i++) {
+        if (num % i == 0) {
+            int e = 0;
+            do {
+                e++;
+                num /= i;
+            } while (num % i == 0);
+
+            long long sum = 0, pow = 1;
+            do {
+                sum += pow;
+                pow *= i;
+            } while (e-- > 0);
+            total *= sum;
+        }
+    }
+    if (num > 1) {
+        total *= (1 + num);
+    }
+    return total;
+}
+```
+</details>
+
+
+<details>
+<summary>  
+    Sieve of Eratosthenes
+</summary>
+    
+```cpp
+vector<bool> sieveEra(int n){
+    vector<bool> is_prime(n+1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i <= n; i++) {
+        if (is_prime[i]) {
+            for (int j = i * i; j <= n; j += i)
+                is_prime[j] = false;
+        }
+    }
+    return is_prime;
+}
+
+vector<int> getPrimes(int n) {
+    vector<bool> is = sieveEra(n);
+    vector<int> primes;
+    for (int i = 2; i <= n; i++) {
+        if(is[i]) primes.push_back(i);
+    }
+    return primes;
+}
+```
+</details>
+
+
+<details>
+<summary>  
+    Factorization
+</summary>
+    
+```cpp
+vector<long long> primes; // primes up to sqrt(n) is enough
+
+vector<long long> factorize(long long n) {
+    vector<long long> factorization;
+    for (long long d : primes) {
+        if (d * d > n)
+            break;
+        while (n % d == 0) {
+            factorization.push_back(d);
+            n /= d;
+        }
+    }
+    if (n > 1)
+        factorization.push_back(n);
+    return factorization;
+}
+```
+</details>
+
